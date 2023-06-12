@@ -1,0 +1,19 @@
+public static SinglyLinkedListNode deleteNode(SinglyLinkedListNode llist, int position) 
+    {
+        if(llist== null)
+            return null;
+        if(position == 0)
+            return llist.next;
+        SinglyLinkedListNode header = llist;
+        for(int i = 1; i< position; i++)
+        {
+            header = header.next;
+        }
+        if(header.next != null)
+            header.next = header.next.next;
+        else
+            header.next = null;    
+        return llist; 
+    }
+
+}
